@@ -40,5 +40,5 @@ class RegistrationAdmin(admin.ModelAdmin):
     search_fields = ['participant__email', 'event__title']
     
 admin.site.register(Participant, ParticipantAdmin)
-admin.site.register(Event, RegistrationAdmin)
-admin.site.register(Registration, EventAdmin)
+admin.site.register(Event, EventAdmin)
+admin.site.register(Registration, RegistrationAdmin)
