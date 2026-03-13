@@ -36,7 +36,7 @@ class EventAdmin(admin.ModelAdmin):
     ordering = ['start_datetime']
 
 class RegistrationAdmin(admin.ModelAdmin):
-    list_display = ['participant', 'event', 'registered_at'] 
+    list_display = ['participant', 'event'] 
     search_fields = ['participant__email', 'event__title']
     
 admin.site.register(Participant, ParticipantAdmin)
