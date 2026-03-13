@@ -9,8 +9,8 @@ class ParticipantAdmin(UserAdmin):
     model = Participant
     
     # Columns shown in the participant list
-    list_display = ['email', 'first_name', 'last_name', 'is_staff']
-    search_fields = ['email', 'first_name', 'last_name']
+    list_display = ['email','username', 'first_name', 'last_name', 'is_staff']
+    search_fields = ['email', 'username', 'first_name', 'last_name']
     ordering = ['email']
 
     # Fields shown when EDITING an existing participant
