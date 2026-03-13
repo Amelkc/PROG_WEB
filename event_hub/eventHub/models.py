@@ -11,7 +11,7 @@ class Participant(AbstractUser):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
-class Event(models.models):
+class Event(models.Model):
     
     
     STATUS_CHOICES = [
@@ -40,7 +40,7 @@ class Event(models.models):
     
 
 
-class Registration(models.models):
+class Registration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
     class Meta:
