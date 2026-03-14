@@ -4,6 +4,7 @@ from .models import *
 from .serializers import *
 from rest_framework.decorators import api_view
 from rest_framework import status
+from .filters import EventFilter
 
 # Create your views here.
 # CRUD = Create Read Update Delete
@@ -21,6 +22,9 @@ def eventCreate(request):
 @api_view(['GET'])
 def eventList(request):
     events=Event.objects.all()
+    filterset = EventFilter(request.query_params, queryset=events)
+    if filterset.is_valid():
+        events = filterset.qs
     serializer = EventSerializer(events, many=True)
     return Response(serializer.data,  status=status.HTTP_200_OK) 
     
