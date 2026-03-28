@@ -5,6 +5,7 @@ const express = require('express');
 
 const eventRoutes = require('./routes/eventRoutes');
 const userRoutes = require('./routes/userRoutes');
+const participationRoutes = require('./routes/participationRoutes');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/events', eventRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/participations', participationRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
