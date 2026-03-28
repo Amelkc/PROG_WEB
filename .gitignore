@@ -170,6 +170,7 @@ cython_debug/
 
 myEnv/
 node_backend/node_modules/
+data/
 
 # Visual Studio Code
 #  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
