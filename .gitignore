@@ -179,5 +179,5 @@ data/
 #  you could uncomment the following to ignore the entire vscode folder
 # .vscode/
 
-
 .DS_Store
+event_hub/db.sqlite3
