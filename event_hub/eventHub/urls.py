@@ -1,21 +1,15 @@
 from django.urls import path
 from .import views
 
+ 
 urlpatterns = [
-    #event
-    path('events/',              views.eventList,    name='event-list'),
-    path('events/create/',       views.eventCreate,  name='event-create'),
-    path('events/update/<int:pk>/', views.eventUpdate,  name='event-update'),
-    path('events/delete/<int:pk>/', views.eventDelete,  name='event-delete'),
-    #participant
-    path('participants/',               views.participantList,   name='participant-list'),
-    path('participants/create/',        views.participantCreate, name='participant-create'),
-    path('participants/update/<int:pk>/', views.participantUpdate, name='participant-update'),
-    path('participants/delete/<int:pk>/', views.participantDelete, name='participant-delete'),
-    #registration
-    path('registrations/',               views.registrationList,   name='registration-list'),
-    path('registrations/create/',        views.registrationCreate, name='registration-create'),
-    path('registrations/update/<int:pk>/', views.registrationUpdate, name='registration-update'),
-    path('registrations/delete/<int:pk>/', views.registrationDelete, name='registration-delete'),
+    # Event
+    path('events/',          views.event_list_create, name='event-list-create'),
+    path('events/<int:pk>/', views.event_detail,      name='event-detail'),
+    # Participant
+    path('participants/',          views.participant_list_create, name='participant-list-create'),
+    path('participants/<int:pk>/', views.participant_detail,      name='participant-detail'),
+    # Registration
+    path('registrations/',          views.registration_list_create, name='registration-list-create'),
+    path('registrations/<int:pk>/', views.registration_detail,      name='registration-detail'),
 ]
-
