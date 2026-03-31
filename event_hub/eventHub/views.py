@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import Response
+from rest_framework.response import Response
 from .models import *
 from .serializers import *
 from rest_framework.decorators import api_view
@@ -8,7 +8,7 @@ from .filters import EventFilter
 
 # Create your views here.
 # CRUD = Create Read Update Delete
-
+#401 -> unauthorized request
 #Event
 @api_view(['POST'])
 def eventCreate(request):
@@ -29,7 +29,7 @@ def eventList(request):
     return Response(serializer.data,  status=status.HTTP_200_OK) 
     
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def eventUpdate(request, pk):
     event=Event.objects.get(id=pk)
     serializer = EventSerializer(instance=event, data=request.data)
@@ -63,7 +63,7 @@ def participantList(request):
     return Response(serializer.data,  status=status.HTTP_200_OK) 
     
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def participantUpdate(request, pk):
     participant=Participant.objects.get(id=pk)
     serializer = ParticipantSerializer(instance=participant, data=request.data)
@@ -98,7 +98,7 @@ def registrationList(request):
     return Response(serializer.data, status=status.HTTP_200_OK) 
     
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def registrationUpdate(request, pk):
     registration=Registration.objects.get(id=pk)
     serializer = RegistrationSerializer(instance=registration, data=request.data)
