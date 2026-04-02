@@ -7,9 +7,11 @@ function EventForm(){
         <p className="event-form-subtitle">Fill in the details below to create a new event.</p>
        <form>
         <div className="field" id="field-title">
+            <div className="input-wrapper">
             <label htmlFor="title" className="form-label">Title <span className="form-required" aria-hidden="true">*</span></label>
             <input id="title" name="title" type="text" class="form-input" maxlength="80" placeholder="e.g. Django Paris Meetup #12" aria-required="true"/>
             <span className="form-char-count" id="titleCount">0/80</span>
+            </div>
             <span className="form-error" id="titleError" role="alert" style={{ display: 'none' }} ></span>
         </div>
         <div className="field" id="field-location">
