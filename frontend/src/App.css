@@ -30,22 +30,38 @@ button {
     font-weight: 600;
 }
 
+.app-content{
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100svh;
+}
+
 section {
     background: linear-gradient(135deg, #ffe4f0, #e6f7ff);
     padding: 30px;
     width: 350px;
     text-align: center;
+    align-items: center;
     border-radius: 30px;
+    justify-content: center;
+  
 }
 
 section h2 {
     color: #ff69b4;
     margin-bottom: 10px;
 }
+
+
 main {
     width: 100%;
+    
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex : 1;
 }
 
 /*eventform*/

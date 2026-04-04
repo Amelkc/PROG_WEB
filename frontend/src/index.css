@@ -52,6 +52,7 @@
 
 body {
   margin: 0;
+  background : linear-gradient(35deg, #ffe4f0, #e6f7ff);
 }
 
 #root {
@@ -64,6 +65,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background: linear-gradient(35deg,#2e303a , #16171d);
 }
 
 h1,
@@ -95,17 +97,3 @@ p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}

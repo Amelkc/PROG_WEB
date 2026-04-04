@@ -1,5 +1,5 @@
 function LoginForm(){
-    return (<div className="login-form">
+    return (
         <main>
         <section>
         <h2>Welcome Back !</h2>
@@ -12,7 +12,7 @@ function LoginForm(){
         </form>
         </section>
         </main>
-    </div>
+    
     )
 
 }

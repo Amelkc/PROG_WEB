@@ -1,6 +1,5 @@
 function EventForm(){
     return (
-    <div className="event-form">
         <main >
         <section>
         <h2>New Event</h2>
@@ -44,7 +43,6 @@ function EventForm(){
         </form>
         </section>
         </main>
-    </div>
     )   
 };
 

@@ -1,5 +1,5 @@
 function SignupForm(){
-    return (<div className="signup-form">
+    return (
         <main>
         <section>
         <h2>Create an Account</h2>
@@ -16,7 +16,6 @@ function SignupForm(){
         </form>
         </section>
         </main>
-    </div>
     )
 
 }

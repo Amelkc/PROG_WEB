@@ -13,11 +13,11 @@ function App() {
 
   return (
     <>
-    <div>
+    <div className='app-content'>
       <Header></Header>
       <Routes>
         {/*TO-DO change "/" logged->dashboard else login*/}
-        <Route path="/" element={<LoginForm/>} /> 
+        <Route path="/" element={<EventForm/>} /> 
         <Route path="/login" element={<LoginForm/>} />
         <Route path="/signup" element={<SignupForm/>} />
         <Route path="/events" element={<EventList/>} />
