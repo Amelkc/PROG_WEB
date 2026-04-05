@@ -115,12 +115,6 @@ function EventList() {
           </select>
         </div>
         <div className="event-field">
-          <label>Location</label>
-          <input placeholder="City…" value={filters.location}
-            onChange={e => setFilters(f => ({ ...f, location: e.target.value }))}
-            style={{ width: 140 }} />
-        </div>
-        <div className="event-field">
           <label>&nbsp;</label>
           <div style={{ display: "flex", gap: 8 }}>
             <button className="apply-btn" onClick={applyFilters}>Apply</button>
