@@ -1,3 +1,6 @@
+import "./EventForm.css"
+
+
 function EventForm(){
     return (
         <main >
@@ -8,15 +11,19 @@ function EventForm(){
         <div className="field" id="field-title">
             <div className="input-wrapper">
             <label htmlFor="title" className="form-label">Title <span className="form-required" aria-hidden="true">*</span></label>
-            <input id="title" name="title" type="text" class="form-input" maxlength="80" placeholder="e.g. Django Paris Meetup #12" aria-required="true"/>
+            <input id="title" name="title" type="text" className="form-input" maxLength="80" placeholder="e.g. Django Paris Meetup #12" aria-required="true"/>
             <span className="form-char-count" id="titleCount">0/80</span>
             </div>
             <span className="form-error" id="titleError" role="alert" style={{ display: 'none' }} ></span>
         </div>
         <div className="field" id="field-location">
             <label htmlFor="location" className="form-label">Location <span className="form-required" aria-hidden="true">*</span></label>
-            <input id="location" name="location" type="text" className="form-input" maxlength="80" placeholder="e.g. Station F, Paris" aria-required="true"/>
+            <input id="location" name="location" type="text" className="form-input" maxLength="80" placeholder="e.g. Station F, Paris" aria-required="true"/>
             <span className="form-error" id="locationError" role="alert" style={{ display: 'none' }}></span>
+        </div>
+        <div className="field" id="field-description">
+            <label htmlFor="description" className="form-label">Description</label>
+            <textarea id="description" name="description" className="form-input" rows={4} placeholder="e.g. Monthly community gathering for Django developers in Paris…"/>
         </div>
         <div className="field" id="field-start">
             <label htmlFor="start_datetime" className="form-label">Start</label>
@@ -31,7 +38,7 @@ function EventForm(){
         </div>
       
         <div className="field" id="field-max">
-            <label htmlFor="max_participants" class="form-label">Max Participants</label>
+            <label htmlFor="max_participants" className="form-label">Max Participants</label>
             <span className="form-hint">Leave empty for unlimited capacity.</span>
             <input id="max_participants" name="max_participants" type="number" className="form-input form-input--narrow" min="1" placeholder="e.g. 100"/>
             <span className="form-error" id="maxError" role="alert" style={{ display: 'none' }}></span>
