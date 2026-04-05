@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Header } from '../components/Header'
 import { Route, Routes } from "react-router-dom";
 import './App.css'
-import { LoadingWrap } from '../components/Loading'
+import { LoadingWrap } from '../components/LoadingWrap'
 import { LoginForm } from '../components/LoginForm'
 import { SignupForm } from '../components/SignupForm'
 import { EventForm } from '../components/EventForm'
