@@ -1,3 +1,6 @@
+import "./SignupForm.css"
+
+
 function SignupForm(){
     return (
         <main>
