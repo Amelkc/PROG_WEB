@@ -1,4 +1,4 @@
-import "./EventForm.css"
+import "../style/EventForm.css"
 
 
 function EventForm(){

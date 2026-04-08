@@ -1,0 +1,17 @@
+.form-edit{
+  position: fixed;
+   inset: 0;
+  background: rgba(0,0,0,0.65);
+   z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24 ;
+}
+
+.edit-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24 ;
+}

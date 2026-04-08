@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link, NavLink } from "react-router-dom";
 import { StatusBadge } from './Badge';
 import { ErrorBox } from './ErrorBox';
-import "./EventList.css";
+import "../style/EventList.css";
 
 const MOCK_EVENTS = [
   {
@@ -89,6 +89,15 @@ function EventList() {
  
   return (
     <div className='event-list'>
+      <div className='back-link'>
+      <Link to="/dashboard" className="back">
+       <svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 7L10 12L15 17" stroke="#ffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        Back to dashboard
+      </svg>
+        Back to dashboard
+      </Link>
+      </div>
       <div className="page-header">
         <div>
           <h2>Find events to join !</h2>
@@ -145,7 +154,7 @@ function EventList() {
                 )}
                 {eventsData.map(ev => (
                   <tr key={ev.id}>
-                    <td><Link to={`/events/${ev.id}`}>{ev.title}</Link></td>
+                    <td><Link to={`/events/test`}>{ev.title}</Link></td>
                     <td>{ev.location}</td>
                     <td style={{ whiteSpace: "nowrap" }}>{ev.start_datetime ? new Date(ev.start_datetime).toLocaleDateString() : "—"}</td>
                     <td style={{ whiteSpace: "nowrap" }}>{ev.end_datetime ? new Date(ev.end_datetime).toLocaleDateString() : "—"}</td>

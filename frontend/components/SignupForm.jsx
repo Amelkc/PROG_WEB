@@ -1,4 +1,4 @@
-import "./SignupForm.css"
+import "../style/SignupForm.css"
 
 
 function SignupForm(){
