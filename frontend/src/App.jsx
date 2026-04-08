@@ -2,13 +2,15 @@ import { useState } from 'react'
 import { Header } from '../components/Header'
 import { Route, Routes } from "react-router-dom";
 import './App.css'
-import { LoadingWrap } from '../components/LoadingWrap'
+
 import { LoginForm } from '../components/LoginForm'
 import { SignupForm } from '../components/SignupForm'
 import { EventForm } from '../components/EventForm'
 import { EventList } from '../components/EventList';
 import { Footer } from '../components/footer';
-
+import { EventDetails } from '../components/EventDetails';
+import { RequireAdmin } from '../components/RequireAdmin';
+import { DashboardPage } from '../components/Dashboard';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/login" element={<LoginForm/>} />
         <Route path="/signup" element={<SignupForm/>} />
         <Route path="/events" element={<EventList/>} />
+        <Route path="/events/test" element={<EventDetails/>} />
+        <Route path="/dashboard" element={<RequireAdmin><DashboardPage /></RequireAdmin>}/>
       </Routes>
       <Footer></Footer>
     </div>
