@@ -28,8 +28,10 @@ class EventSerializer(serializers.ModelSerializer):
 
 class ParticipantSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ["id", "first_name", "last_name", "email"]
+        model = Participant
+        fields = ["id", "username", "first_name", "last_name", "email", "password"]  
         read_only_fields = ["id"]
+        extra_kwargs = {"password": {"write_only": True}} 
     def create(self, validated_data):
         password = validated_data.pop("password", None)
         user = Participant(**validated_data)
