@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, BasePermission, AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
-from .permissions import ReadOnly
+from .permissions import ReadOnly, IsOwnerPermission
 from .models import Event, Participant, Registration
 from .serializers import EventSerializer, ParticipantSerializer, RegistrationSerializer
 from .filters import EventFilter
@@ -30,6 +30,10 @@ class ParticipantViewSet(ModelViewSet):
         return super().get_permissions()
 
 class RegistrationViewSet(ModelViewSet):
-    queryset = Registration.objects.all()
     serializer_class = RegistrationSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser | ReadOnly]
+    permission_classes = [IsAdminUser | IsOwnerPermission]
+
+    def get_queryset(self):
+        if self.request.user.is_staff:
+            return Registration.objects.all()
+        return Registration.objects.filter(participant=self.request.user)
