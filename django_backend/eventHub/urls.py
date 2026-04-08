@@ -1,15 +1,9 @@
-from django.urls import path
-from .import views
+from rest_framework.routers import DefaultRouter
+from .views import *
 
- 
-urlpatterns = [
-    # Event
-    path('events/',          views.event_list_create, name='event-list-create'),
-    path('events/<int:pk>/', views.event_detail,      name='event-detail'),
-    # Participant
-    path('participants/',          views.participant_list_create, name='participant-list-create'),
-    path('participants/<int:pk>/', views.participant_detail,      name='participant-detail'),
-    # Registration
-    path('registrations/',          views.registration_list_create, name='registration-list-create'),
-    path('registrations/<int:pk>/', views.registration_detail,      name='registration-detail'),
-]
+router = DefaultRouter()
+router.register(r'events', EventViewSet)
+router.register(r'participants', ParticipantViewSet)
+router.register(r'registrations', RegistrationViewSet)
+
+urlpatterns = router.urls
