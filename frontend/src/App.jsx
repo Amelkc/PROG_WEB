@@ -7,6 +7,7 @@ import { LoginForm } from '../components/LoginForm'
 import { SignupForm } from '../components/SignupForm'
 import { EventForm } from '../components/EventForm'
 import { EventList } from '../components/EventList';
+import { Footer } from '../components/footer';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +23,7 @@ function App() {
         <Route path="/signup" element={<SignupForm/>} />
         <Route path="/events" element={<EventList/>} />
       </Routes>
-    
+      <Footer></Footer>
     </div>
     </>
   )

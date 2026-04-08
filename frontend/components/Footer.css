@@ -1,0 +1,37 @@
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;   
+    flex-direction: row;      
+    justify-content: center; 
+    gap: 32px;            
+}
+footer li {
+    display: flex;
+    align-items: center;     
+    gap: 8px;             
+}
+
+footer i {
+    font-size: 24px;
+}
+
+footer a, p {
+    text-decoration: none;
+    color: #6b6375;
+    
+}
