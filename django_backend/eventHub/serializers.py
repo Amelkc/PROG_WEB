@@ -41,6 +41,7 @@ class ParticipantSerializer(serializers.ModelSerializer):
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
+    participant_detail = ParticipantSerializer(source="participant", read_only=True)
     class Meta:
         model = Registration
         fields = "__all__"
