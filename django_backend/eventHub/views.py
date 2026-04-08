@@ -1,22 +1,17 @@
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated, IsAdminUser, SAFE_METHODS, BasePermission, AllowAny
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, BasePermission, AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
+from .permissions import ReadOnly
 from .models import Event, Participant, Registration
 from .serializers import EventSerializer, ParticipantSerializer, RegistrationSerializer
 from .filters import EventFilter
-
-
-class ReadOnly(BasePermission):
-    def has_permission(self, request, view):
-        return request.method in SAFE_METHODS
-
 
 class EventViewSet(ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     permission_classes = [IsAuthenticated, IsAdminUser | ReadOnly]
     filter_backends = [DjangoFilterBackend]
-    filterset_class = EventFilter  # ← ton filtre est conservé !
+    filterset_class = EventFilter  
 
 
 class ParticipantViewSet(ModelViewSet):
@@ -27,9 +22,12 @@ class ParticipantViewSet(ModelViewSet):
     #new user registration
     def get_permissions(self):
         if self.action == 'create':
-            return [AllowAny()]
+            if not self.request.user.is_authenticated or self.request.user.is_staff:
+                # or is_staff si on voudrait faire un admin unique et un groupe de staff
+                return [AllowAny()]
+            else:
+                return [IsAdminUser()]
         return super().get_permissions()
-
 
 class RegistrationViewSet(ModelViewSet):
     queryset = Registration.objects.all()
