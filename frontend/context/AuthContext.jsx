@@ -1,6 +1,7 @@
 import { useState, useContext, createContext, useCallback } from "react";
-
-
+import { Navigate } from "react-router-dom";
+import { LoadingWrap } from "../components/LoadingWrap";
+const API_BASE = "http://localhost:8000/api";
 const AuthContext = createContext(null);
 
 export function useAuth() { return useContext(AuthContext); }
@@ -56,4 +57,17 @@ export function AuthProvider({ children }) {
       {children}
     </AuthContext.Provider>
   );
+}
+
+
+export function RequireAdmin({ children }) {
+  const { user, loading } = useAuth();
+
+  if (loading) return <LoadingWrap />; 
+
+  const isAdmin = user?.is_staff || user?.is_superuser;
+
+  if (!user) return <Navigate to="/login" replace />;
+  if (!isAdmin) return <Navigate to="/events" replace />;  
+  return children;
 }
