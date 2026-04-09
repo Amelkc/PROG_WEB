@@ -1,21 +1,21 @@
-import { useState } from 'react'
+
 import { Header } from '../components/Header'
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import './App.css'
 
-import { LoginForm } from '../components/LoginForm'
-import { SignupForm } from '../components/SignupForm'
 import { EventForm } from '../components/EventForm'
 
-import { Footer } from '../components/footer';
+import { Footer } from '../components/Footer';
 import { EventDetails } from '../pages/EventDetails';
-import { RequireAdmin } from '../context/AuthContext';
+import { RequireAdmin, RequireAuth } from '../context/AuthContext';
 import { DashboardPage } from '../pages/Dashboard';
 import { HomePage } from '../pages/HomePage';
 import { EventsPage } from '../pages/EventsPage';
 import { AuthPage } from '../pages/AuthPage';
+import {ParticipantsPage} from '../pages/ParticipantsPage'
+import {ProfilePage} from '../pages/Profile'
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
@@ -23,13 +23,17 @@ function App() {
       <Header></Header>
       <Routes>
         {/*TO-DO change "/" logged->dashboard else login*/}
+        <Route path="/home" element={<RequireAuth><HomePage /></RequireAuth>} />
         <Route path="/create-event" element={<RequireAdmin><EventForm/></RequireAdmin>}/> 
-        <Route path="/login" element={<LoginForm/>} />
-        <Route path="/signup" element={<AuthPage/>} />
-        <Route path="/events" element={<EventsPage/>} />
-        <Route path="/events/test" element={<EventDetails/>} />
-        <Route path="/dashboard" element={<DashboardPage />}/>
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/login" element={<AuthPage/>} />
+        <Route path="/events" element={<RequireAuth><EventsPage/></RequireAuth>} />
+        <Route path="/events/:id" element={<RequireAuth><EventDetails/></RequireAuth>} />
+        <Route path="/dashboard" element={<RequireAdmin><DashboardPage /></RequireAdmin>}/>
+        <Route path="/participants" element={<RequireAdmin><ParticipantsPage/></RequireAdmin>}/>
+        <Route path="/profile" element={<RequireAuth><ProfilePage /></RequireAuth>} />
+        <Route path="/profile/:id" element={<RequireAuth><ProfilePage /></RequireAuth>} />
+        <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
       <Footer></Footer>
     </div>

@@ -6,76 +6,18 @@ import { useState, useEffect } from 'react'
 import {LoadingWrap} from '../components/LoadingWrap'
 import {ErrorBox} from '../components/ErrorBox'
 
-export const mockEvent = {
-  id: 1,
-  title: "Machine Learning Study Day",
-  description: "A full-day workshop on transformer architectures and vision models. Hands-on sessions with DINOv2 and ViT fine-tuning on medical imaging datasets.",
-  location: "Salle 3B, Campus Paris-Saclay",
-  start_datetime: "2026-04-15T09:00:00Z",
-  end_datetime:   "2026-04-15T18:00:00Z",
-  max_participants: 5,
-  status: "open",
-};
-
-export const mockRegistrations = {
-  results: [
-    {
-      id: 1,
-      event: 1,
-      participant: 1,
-      participant_detail: {
-        id: 1,
-        first_name: "Amel",
-        last_name: "K",
-        email: "amel.k@example.com",
-      },
-    },
-    {
-      id: 2,
-      event: 1,
-      participant: 2,
-      participant_detail: {
-        id: 2,
-        first_name: "Lucas",
-        last_name: "Martin",
-        email: "lucas.martin@example.com",
-      },
-    },
-    {
-      id: 3,
-      event: 1,
-      participant: 3,
-      participant_detail: {
-        id: 3,
-        first_name: "Sofia",
-        last_name: "Benali",
-        email: "sofia.benali@example.com",
-      },
-    },
-    {
-      id: 4,
-      event: 1,
-      participant: 4,
-      // no participant_detail → tests the ?? fallback
-      participant_detail: null,
-    },
-  ],
-};
-
-
-
 
 
 
 function EventDetails() {
-  {/**
+ 
   const { id } = useParams();
   const { user, tokens, refreshToken } = useAuth();
   const navigate = useNavigate();
 
   const { data: eventData, loading, error, reload: reloadEvent } = useApi(`/events/${id}/`);
   const { data: registrations, loading: rl, reload: reloadRegs } = useApi(`/registrations/?event=${id}`, [id]);
-   */}
+  
   const [event, setEvent] = useState(null);
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
@@ -84,30 +26,21 @@ function EventDetails() {
   const [regError, setRegError] = useState("");
   const [regSuccess, setRegSuccess] = useState("");
   
-  const eventData = mockEvent;
   useEffect(() => { if (eventData) setEvent(eventData); }, [eventData]);
-  const loading = false;
-  const error = null;
+
   if (loading) return <LoadingWrap />;
   if (error) return <ErrorBox msg={error} />;
   if (!event) return null;
 
-  const registrations = mockRegistrations;
-const regs = registrations?.results ?? []; 
-  const rl= false ;
-  const isAdmin = true;
-  const isFull = event.max_participants && regs.length >= event.max_participants;
-  const canRegister = event.status === "open" && !isFull;
-  const isRegistered = false;
+
   
-  {/*
   const isAdmin = user?.is_staff;
   const regs = registrations?.results ?? registrations ?? [];
   const myReg = regs.find(r => r.participant === user?.id);
   const isRegistered = !!myReg;
   const isFull = event.max_participants && regs.length >= event.max_participants;
   const canRegister = event.status === "open" && !isFull;
-  */}
+
 
   const handleRegister = async () => {
     setRegLoading(true); setRegError(""); setRegSuccess("");

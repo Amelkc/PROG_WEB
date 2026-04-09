@@ -6,58 +6,6 @@ import { ErrorBox } from '../components/ErrorBox';
 import { EventList } from '../components/EventList';
 import "../style/EventList.css";
 
-const MOCK_EVENTS = [
-  {
-    id: 1,
-    title: "React Paris Meetup",
-    description: "Monthly frontend community gathering.",
-    location: "Paris, France",
-    start_datetime: "2026-04-15T18:00:00Z",
-    end_datetime: "2026-04-15T21:00:00Z",
-    max_participants: 50,
-    status: "open",
-  },
-  {
-    id: 2,
-    title: "Machine Learning Summit",
-    description: "Annual ML research conference.",
-    location: "Lyon, France",
-    start_datetime: "2026-05-10T09:00:00Z",
-    end_datetime: "2026-05-12T18:00:00Z",
-    max_participants: 200,
-    status: "closed",
-  },
-  {
-    id: 3,
-    title: "Deep Learning Workshop",
-    description: "Hands-on transformer fine-tuning session.",
-    location: "Bordeaux, France",
-    start_datetime: null,
-    end_datetime: null,
-    max_participants: 30,
-    status: "postponed",
-  },
-  {
-    id: 4,
-    title: "Open Source Hackathon",
-    description: "48-hour collaborative coding event.",
-    location: "Lille, France",
-    start_datetime: "2026-03-01T08:00:00Z",
-    end_datetime: "2026-03-03T08:00:00Z",
-    max_participants: null,       // ∞ — no participant cap
-    status: "cancelled",
-  },
-  {
-    id: 5,
-    title: "Computer Vision Seminar",
-    description: "Medical imaging and histopathology analysis.",
-    location: "Marseille, France",
-    start_datetime: "2026-06-20T14:00:00Z",
-    end_datetime: "2026-06-20T17:30:00Z",
-    max_participants: 80,
-    status: "open",
-  },
-];
 
 function EventsPage() {
   const [filters, setFilters] = useState({ status: "", location: "", search: "" });
@@ -68,22 +16,9 @@ function EventsPage() {
     .map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
     .join("&");
  
-  {/*const { data, loading, error } = useApi(`/events/${queryStr ? "?" + queryStr : ""}`, [queryStr]);
+  const { data, loading, error } = useApi(`/events/${queryStr ? "?" + queryStr : ""}`, [queryStr]);
   const eventsData = data?.results ?? data ?? [];  
-  
-       !!!!!!!!!!!!!!!!!!!!!!  A DECOMMENTER QUAND API*/}
- 
-  {/*  A SUPP QUAND API A PARTIR DE ICI */}
-  const loading = false;
-  const error = null;
-  const eventsData = MOCK_EVENTS.filter(ev => {
-    const s = applied.search?.toLowerCase() ?? "";
-    const matchSearch = !s || ev.title.toLowerCase().includes(s) || ev.location.toLowerCase().includes(s);
-    const matchStatus = !applied.status || ev.status === applied.status;
-    const matchLocation = !applied.location || ev.location.toLowerCase().includes(applied.location.toLowerCase());
-      return matchSearch && matchStatus && matchLocation;
-  });
-  {/*  JUSQUE ICI */ }
+
  
   const applyFilters = () => setApplied({ ...filters });
   const clearFilters = () => { setFilters({ status: "", location: "", search: "" }); setApplied({}); };

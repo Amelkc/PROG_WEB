@@ -1,5 +1,5 @@
 import { useState, useContext, createContext, useCallback } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { LoadingWrap } from "../components/LoadingWrap";
 const API_BASE = "http://localhost:8000/api";
 const AuthContext = createContext(null);
@@ -31,6 +31,20 @@ export function AuthProvider({ children }) {
     setUser(me);
     return me;
   };
+  const signup = async ({ email, first_name, last_name, password }) => {
+  const res = await fetch(`${API_BASE}/participants/register/`, { // adjust endpoint
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, first_name, last_name, password }),
+  });
+  if (!res.ok) {
+    const data = await res.json();
+    const err = new Error("Signup failed");
+    err.data = data;   // lets SignupForm read field-level errors
+    throw err;
+  }
+  return res.json();
+};  
 
   const logout = () => {
     localStorage.clear();
@@ -52,8 +66,9 @@ export function AuthProvider({ children }) {
     return data.access;
   }, [tokens.refresh]);
 
+  const [loading, setLoading] = useState(false);
   return (
-    <AuthContext.Provider value={{ user, tokens, login, logout, refreshToken }}>
+    <AuthContext.Provider value={{ user, tokens, login, logout, refreshToken, signup, loading }}>
       {children}
     </AuthContext.Provider>
   );
@@ -72,9 +87,9 @@ export function RequireAdmin({ children }) {
   return children;
 }
 
-export function RequireLogged({children}){
-  const { tokens } = useAuth();
+export function RequireAuth({children}){
+  const { user } = useAuth();
   const location = useLocation();
-  if (!tokens.access) return <Navigate to="/login" state={{ from: location }} replace />;
+  if (!user) return <Navigate to="/login" state={{ from: location }} replace />;
   return children;
 }
