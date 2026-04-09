@@ -69,6 +69,16 @@ class Event(models.Model):
                 errors["end_datetime"] = ValidationError(
                 "only postponed events should have null end_datetime",
                 code="invalid")
+        if self.status == "postponed":
+            if self.start_datetime is not None or self.end_datetime is not None:
+                errors["start_datetime"] = ValidationError(
+                    "Postponed events must have null start_datetime.",
+                    code="invalid"
+                )
+                errors["end_datetime"] = ValidationError(
+                    "Postponed events must have null end_datetime.",
+                    code="invalid"
+                )
         if errors:
             raise ValidationError(errors)
     
