@@ -14,6 +14,7 @@ import { EventsPage } from '../pages/EventsPage';
 import { AuthPage } from '../pages/AuthPage';
 import {ParticipantsPage} from '../pages/ParticipantsPage'
 import {ProfilePage} from '../pages/Profile'
+import { EventCreate } from '../pages/EventCreate';
 function App() {
   
 
@@ -24,7 +25,7 @@ function App() {
       <Routes>
         {/*TO-DO change "/" logged->dashboard else login*/}
         <Route path="/home" element={<RequireAuth><HomePage /></RequireAuth>} />
-        <Route path="/create-event" element={<RequireAdmin><EventForm/></RequireAdmin>}/> 
+        {/*<Route path="/create-event" element={<RequireAdmin><EventForm/></RequireAdmin>}/> */}
         <Route path="/login" element={<AuthPage/>} />
         <Route path="/events" element={<RequireAuth><EventsPage/></RequireAuth>} />
         <Route path="/events/:id" element={<RequireAuth><EventDetails/></RequireAuth>} />
@@ -34,6 +35,7 @@ function App() {
         <Route path="/profile/:id" element={<RequireAuth><ProfilePage /></RequireAuth>} />
         <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>} />
         <Route path="*" element={<Navigate to="/home" replace />} />
+        <Route path="/admin/events/create" element={<RequireAdmin><EventCreate /></RequireAdmin>}/>
       </Routes>
       <Footer></Footer>
     </div>
