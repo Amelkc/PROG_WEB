@@ -1,7 +1,7 @@
 import { LoadingWrap } from '../components/LoadingWrap'
 import { useState } from 'react'
-import { Link, NavLink } from "react-router-dom";
-import { StatusBadge } from '../components/Badge';
+import { Link } from "react-router-dom";
+import { useApi } from '../api/api';
 import { ErrorBox } from '../components/ErrorBox';
 import { EventList } from '../components/EventList';
 import "../style/EventList.css";
@@ -26,12 +26,11 @@ function EventsPage() {
   return (
     <div className='event-list'>
       <div className='back-link'>
-      <Link to="/dashboard" className="back">
-       <svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15 7L10 12L15 17" stroke="#ffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        Back to dashboard
+      <Link to="/home" className="back">
+       <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 16 16" fill="none">
+          <path d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z" fill="#ffff"/>
       </svg>
-        Back to dashboard
+    
       </Link>
       </div>
       <div className="page-header">

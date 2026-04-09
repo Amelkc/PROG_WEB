@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Header(){
     const [menuOpen, setMenuOpen] = useState(false);
+    const { user } = useAuth();
 
+    const isAdmin = user?.is_staff || user?.is_superuser;
     return (
 
     <header className="app-header">
@@ -30,11 +32,12 @@ function Header(){
         <li>
           <NavLink to="/events">Events</NavLink>
         </li>
+        {isAdmin && (
+            <li><NavLink to="/participants">Participants</NavLink></li>
+          )}
+
         <li>
-          <NavLink to="/login">Sign In</NavLink>
-        </li>
-        <li>
-          <NavLink to="/signup">Sign Up</NavLink>
+          <NavLink to="/profile">Profile</NavLink>
         </li>
       </ul>
     </nav>

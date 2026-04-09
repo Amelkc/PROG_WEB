@@ -2,8 +2,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ErrorBox } from "../components/ErrorBox";
 import { LoadingWrap } from "../components/LoadingWrap";
 import { useAuth } from "../context/AuthContext";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { apiMutate, useApi } from "../api/api";
+import { StatusBadge } from "../components/Badge";
+import { Spinner } from "../components/Spinner";
 
 export function ProfilePage() {
   const { id: routeId } = useParams();
@@ -67,8 +69,9 @@ export function ProfilePage() {
     if (pwForm.new !== pwForm.confirm) { setPwError("New passwords do not match."); return; }
     if (pwForm.new.length < 8) { setPwError("Password must be at least 8 characters."); return; }
     setPwSaving(true);
+    const url = isAdmin && !isOwnProfile ? `/participants/${targetId}/set_password/` : `/participants/change_password/`;      
     try {
-      await apiMutate(`/participants/${targetId}/set_password/`, {
+      await apiMutate(url, {
         method: "POST",
         body: isAdmin && !isOwnProfile
           ? { new_password: pwForm.new }
@@ -124,10 +127,13 @@ export function ProfilePage() {
 
       <aside className="profile-aside">
         <div className="card profile-identity">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 16 16">
+          <path d="m 8 1 c -1.65625 0 -3 1.34375 -3 3 s 1.34375 3 3 3 s 3 -1.34375 3 -3 s -1.34375 -3 -3 -3 z m -1.5 7 c -2.492188 0 -4.5 2.007812 -4.5 4.5 v 0.5 c 0 1.109375 0.890625 2 2 2 h 8 c 1.109375 0 2 -0.890625 2 -2 v -0.5 c 0 -2.492188 -2.007812 -4.5 -4.5 -4.5 z m 0 0" fill="#fff"/>
+          </svg>
           <p className="profile-name-lg">{profileData.first_name} {profileData.last_name}</p>
           <p className="profile-meta">{profileData.email}</p>
-             <StatusBadge status={profileData.is_staff ? "Admin" : "Viewer"}></StatusBadge>
-          <p className="profile-username">@{profileData.username}</p>
+          <StatusBadge status={profileData.is_staff ? "Admin" : "Viewer"}></StatusBadge>
+     
         </div>
 
         {canEdit && (
