@@ -1,13 +1,19 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
+  --text-f: #6b6375;
+  --light-grey: #9998a8;
+  --dark-grey: #676767;
+  --white: #f0eff4;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
+  --accent-2: #ff69b4;
   --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
+  --accent-border: rgba(255,255,255,0.07);
+  --accent-border-2: #ffd6e8;
   --social-bg: rgba(244, 243, 236, 0.5);
+  --button-hover: #f090c6;
+  --button-active: #f9b0d8;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -30,6 +36,7 @@
   }
 }
 
+/* not necessary since toggle is not a requirement, root will be using a dark theme palette by default
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
@@ -49,6 +56,7 @@
     filter: invert(1) brightness(2);
   }
 }
+*/
 
 body {
   margin: 0;
