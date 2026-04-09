@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, BasePermission, AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
-from .permissions import ReadOnly, IsOwnerPermission, IsRegisteredToEvent
+from .permissions import ReadOnly, IsOwnerPermission #, IsRegisteredToEvent
 from .models import Event, Participant, Registration
 from .serializers import EventSerializer, ParticipantSerializer, RegistrationSerializer
 from .filters import EventFilter
@@ -15,19 +15,18 @@ class EventViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_class = EventFilter  
 
-    def get_permissions(self):
-        if self.action == 'participants':
-            return [IsAuthenticated(), IsRegisteredToEvent()]
-        return super().get_permissions()
+    #def get_permissions(self):
+    #    if self.action == 'participants':
+    #        return [IsAuthenticated(), IsRegisteredToEvent()]
+    #    return super().get_permissions()
 
-    @action(detail=True, methods=['get'], url_path='participants')
-    def participants(self, request, pk=None):
-        event = self.get_object()
-        self.check_object_permissions(request, event)  # force le check
-        participants = event.participants.all()
-        serializer = ParticipantSerializer(participants, many=True)
-        return Response(serializer.data)
-
+    #@action(detail=True, methods=['get'], url_path='participants')
+    #def participants(self, request, pk=None):
+    #    event = self.get_object()
+    #    self.check_object_permissions(request, event)  # force le check
+    #    participants = event.participants.all()
+    #    serializer = ParticipantSerializer(participants, many=True)
+    #    return Response(serializer.data)
 
 class ParticipantViewSet(ModelViewSet):
     queryset = Participant.objects.all()
