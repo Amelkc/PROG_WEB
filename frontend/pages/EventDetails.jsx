@@ -246,7 +246,7 @@ const regs = registrations?.results ?? [];
                   : (
                     <button className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}
                       onClick={handleRegister} disabled={regLoading}>
-                      {regLoading ? <> <LoadingWrap/>Registering…</> : "Register for this event"}
+                      {regLoading ? <> <Spinner/>Registering…</> : "Register for this event"}
                     </button>
                   )
                 }

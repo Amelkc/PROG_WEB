@@ -51,7 +51,7 @@ export function useApi(path, deps = [], options = {}) {
 }
 
 
-async function apiMutate(path, { method, body, token, refreshToken } = {}) {
+export async function apiMutate(path, { method, body, token, refreshToken } = {}) {
   try {
     return await apiFetch(path, { method, body, token });
   } catch (e) {
