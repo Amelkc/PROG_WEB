@@ -13,6 +13,7 @@ import { RequireAdmin } from '../context/AuthContext';
 import { DashboardPage } from '../pages/Dashboard';
 import { HomePage } from '../pages/HomePage';
 import { EventsPage } from '../pages/EventsPage';
+import { AuthPage } from '../pages/AuthPage';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -24,7 +25,7 @@ function App() {
         {/*TO-DO change "/" logged->dashboard else login*/}
         <Route path="/create-event" element={<RequireAdmin><EventForm/></RequireAdmin>}/> 
         <Route path="/login" element={<LoginForm/>} />
-        <Route path="/signup" element={<SignupForm/>} />
+        <Route path="/signup" element={<AuthPage/>} />
         <Route path="/events" element={<EventsPage/>} />
         <Route path="/events/test" element={<EventDetails/>} />
         <Route path="/dashboard" element={<DashboardPage />}/>

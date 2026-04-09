@@ -71,3 +71,10 @@ export function RequireAdmin({ children }) {
   if (!isAdmin) return <Navigate to="/events" replace />;  
   return children;
 }
+
+export function RequireLogged({children}){
+  const { tokens } = useAuth();
+  const location = useLocation();
+  if (!tokens.access) return <Navigate to="/login" state={{ from: location }} replace />;
+  return children;
+}
