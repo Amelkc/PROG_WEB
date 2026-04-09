@@ -29,7 +29,8 @@ class EventSerializer(serializers.ModelSerializer):
 class ParticipantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participant
-        fields = ["id", "username", "first_name", "last_name", "email", "is_staff", "is_superuser"]
+        fields = ["id", "username", "first_name", "last_name", 
+                  "password", "email", "is_staff", "is_superuser"]
         read_only_fields = ["id"]
         extra_kwargs = {
             "password": {"write_only": True},
