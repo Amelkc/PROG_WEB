@@ -8,12 +8,12 @@ form {
 label {
     text-align: left;
     font-weight: 600;
-    color: #888;
+    color: var(--text-f);
 }
 
 input {
     padding: 10px;
-    border: 2px solid #ffd6e8;
+    border: 2px solid var(--accent-border-2);
     outline: none;
     border-radius: 15px;
     font-size:18px
@@ -24,7 +24,7 @@ button {
     padding: 12px;
     border: none;
     border-radius: 25px;
-    background-color: #ff69b4;
+    background-color: var(--accent-2);
     color: white;
     font-size: 1em;
     font-weight: 600;
@@ -50,7 +50,7 @@ section {
 }
 
 section h2 {
-    color: #ff69b4;
+    color: var(--accent-2);
     margin-bottom: 10px;
 }
 
@@ -133,31 +133,31 @@ main {
 .btn:active { transform: scale(0.97); }
 .btn-ghost {
   background: transparent; 
-  border-color:#ffe4f0; 
+  border-color: var(--white); 
   color: #6b6762;
 }
 .btn-ghost:hover { 
   background: oklch(0.9 0.005 80 / 0.08); 
   color: #1e1b17; 
-  border-color: #ffe4f0;}
+  border-color: var(--white);}
 .btn-primary {
-  background:   #ff69b4; 
+  background:   var(--accent-2); 
   color: #2a0a1c; 
-  border-color:   #ff69b4;
+  border-color:   var(--accent-2);
   box-shadow: 0 1px 4px oklch(0.55 0.18 350 / 0.25);
 }
 .btn-primary:hover {
-  background: #f090c6; 
-  border-color: #f090c6;
+  background: var(--button-hover); 
+  border-color: var(--button-hover);
   box-shadow: 0 4px 12px oklch(0.55 0.18 350 / 0.35);
 }
 .btn-primary:active { 
-  background: #f9b0d8; 
-  border-color: #f9b0d8; }
+  background: var(--button-active); 
+  border-color: var(--button-active); }
 
 
 .btn:focus-visible, .form-input:focus-visible {
-  outline: 2px solid  #ff69b4; 
+  outline: 2px solid  var(--accent-2); 
   outline-offset: 2px;
 }
 
@@ -166,7 +166,7 @@ textarea {
   height: 150px;
   padding: 12px;
   box-sizing: border-box;
-  border: 2px solid #ffd6e8;
+  border: 2px solid var(--accent-border-2);
   border-radius: 15px;
 
   font-size: 16px;
