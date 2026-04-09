@@ -6,11 +6,13 @@ import './App.css'
 import { LoginForm } from '../components/LoginForm'
 import { SignupForm } from '../components/SignupForm'
 import { EventForm } from '../components/EventForm'
-import { EventList } from '../components/EventList';
+
 import { Footer } from '../components/footer';
-import { EventDetails } from '../components/EventDetails';
-import { RequireAdmin } from '../components/RequireAdmin';
-import { DashboardPage } from '../components/Dashboard';
+import { EventDetails } from '../pages/EventDetails';
+import { RequireAdmin } from '../context/AuthContext';
+import { DashboardPage } from '../pages/Dashboard';
+import { HomePage } from '../pages/HomePage';
+import { EventsPage } from '../pages/EventsPage';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -20,12 +22,13 @@ function App() {
       <Header></Header>
       <Routes>
         {/*TO-DO change "/" logged->dashboard else login*/}
-        <Route path="/" element={<EventForm/>} /> 
+        <Route path="/create-event" element={<RequireAdmin><EventForm/></RequireAdmin>}/> 
         <Route path="/login" element={<LoginForm/>} />
         <Route path="/signup" element={<SignupForm/>} />
-        <Route path="/events" element={<EventList/>} />
+        <Route path="/events" element={<EventsPage/>} />
         <Route path="/events/test" element={<EventDetails/>} />
-        <Route path="/dashboard" element={<RequireAdmin><DashboardPage /></RequireAdmin>}/>
+        <Route path="/dashboard" element={<DashboardPage />}/>
+        <Route path="/" element={<HomePage/>} />
       </Routes>
       <Footer></Footer>
     </div>

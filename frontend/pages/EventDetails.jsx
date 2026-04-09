@@ -1,10 +1,10 @@
-import { ParticipantTable } from "./ParticipantTable";
-import { StatusBadge } from './Badge';
+import { ParticipantTable } from "../components/ParticipantTable";
+import { StatusBadge } from '../components/Badge';
 import { Link, NavLink } from "react-router-dom";
-import { DeleteConfirmModal, EditEventModal} from './EventModal'
+import { DeleteConfirmModal, EditEventModal} from '../components/EventModal'
 import { useState, useEffect } from 'react'
-import {LoadingWrap} from './LoadingWrap'
-import {ErrorBox} from './ErrorBox'
+import {LoadingWrap} from '../components/LoadingWrap'
+import {ErrorBox} from '../components/ErrorBox'
 
 export const mockEvent = {
   id: 1,
