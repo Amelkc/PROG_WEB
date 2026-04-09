@@ -1,0 +1,138 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-align: left;
+    font-weight: 600;
+    color: #888;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #ffd6e8;
+    outline: none;
+    border-radius: 15px;
+    font-size:18px
+}
+
+button {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff69b4;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.app-content{
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100svh;
+}
+
+section {
+    background: linear-gradient(135deg, #ffe4f0, #e6f7ff);
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    align-items: center;
+    border-radius: 30px;
+    justify-content: center;
+  
+}
+
+section h2 {
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+
+main {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex : 1;
+}
+button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ff69b4;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #f050a8;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.35);
+}
+
+button:active:not(:disabled) {
+  background-color: #f9b0d8;
+  box-shadow: none;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-tabs{
+  gap: 4px;
+}
+
+.auth-tabs button{
+   padding: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 99px;
+  background: transparent;
+  color:  #888;
+  cursor: pointer;
+}
+
+.auth-tabs button:hover{
+   padding: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 99px;
+  background: #f050a8;
+  color: white;
+}
+
+
+.auth-error {
+  font-size: 0.875rem;
+  color: #c0392b;
+  background: #fdf0f0;
+  border: 1px solid rgba(192, 57, 43, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0;
+}
+
+.auth-success {
+  font-size: 0.875rem;
+  color: #437a22;
+  background: #f0faf0;
+  border: 1px solid rgba(67, 122, 34, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0;
+}
