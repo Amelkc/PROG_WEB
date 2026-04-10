@@ -92,5 +92,12 @@ class RegistrationViewSet(ModelViewSet):
 
     def get_queryset(self):
         if self.request.user.is_staff:
-            return Registration.objects.all()
-        return Registration.objects.filter(participant=self.request.user)
+            queryset = Registration.objects.all()
+        else:
+            queryset = Registration.objects.filter(participant=self.request.user)
+
+        event_id = self.request.query_params.get("event")
+        if event_id:
+            queryset = queryset.filter(event_id=event_id)
+
+        return queryset
