@@ -137,20 +137,13 @@ export function ProfilePage() {
         </div>
 
         {canEdit && (
-          <section className="danger-zone">
-            <h4 className="danger-title">Danger zone</h4>
-            <p className="danger-sub">
-              {isOwnProfile
-                ? "Deleting your account is permanent and cannot be undone."
-                : "Permanently delete this user account."}
-            </p>
             <button className="btn btn-danger-outline btn-full" onClick={() => setShowDeleteConfirm(true)}>
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M2 3h9M5 3V2h3v1M4 3l.5 8h4L9 3"/>
               </svg>
               {isOwnProfile ? "Delete my account" : "Delete account"}
             </button>
-          </section>
+         
         )}
       </aside>
 
