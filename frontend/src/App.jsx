@@ -3,7 +3,6 @@ import { Header } from '../components/Header'
 import { Route, Routes, Navigate } from "react-router-dom";
 import './App.css'
 
-import { EventForm } from '../components/EventForm'
 
 import { Footer } from '../components/Footer';
 import { EventDetails } from '../pages/EventDetails';
@@ -23,9 +22,7 @@ function App() {
     <div className='app-content'>
       <Header></Header>
       <Routes>
-        {/*TO-DO change "/" logged->dashboard else login*/}
         <Route path="/home" element={<RequireAuth><HomePage /></RequireAuth>} />
-        {/*<Route path="/create-event" element={<RequireAdmin><EventForm/></RequireAdmin>}/> */}
         <Route path="/login" element={<AuthPage/>} />
         <Route path="/events" element={<RequireAuth><EventsPage/></RequireAuth>} />
         <Route path="/events/:id" element={<RequireAuth><EventDetails/></RequireAuth>} />
