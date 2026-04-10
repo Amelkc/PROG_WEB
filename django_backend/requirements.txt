@@ -1,9 +1,11 @@
-asgiref==3.11.1
-Django==5.2.12
-django-cors-headers==4.9.0
-django-filter==25.2
-djangorestframework==3.17.1
-djangorestframework_simplejwt==5.5.1
-PyJWT==2.12.1
-sqlparse==0.5.5
-tzdata==2025.3
+asgiref @ file:///Users/ec2-user/croot/asgiref_1771842732433/work
+dj-database-url==3.1.2
+Django @ file:///opt/miniconda3/conda-bld/django_1764329190998/work
+django-cors-headers @ file:///home/conda/feedstock_root/build_artifacts/django-cors-headers_1758205387979/work
+django-filter @ file:///home/conda/feedstock_root/build_artifacts/django-filter_1759697563568/work
+djangorestframework @ file:///home/conda/feedstock_root/build_artifacts/djangorestframework_1774433587242/work
+djangorestframework_simplejwt @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_djangorestframework_simplejwt_1770309339/work
+packaging @ file:///opt/miniconda3/conda-bld/packaging_1761049079066/work
+psycopg2-binary==2.9.11
+PyJWT @ file:///Users/ec2-user/croot/pyjwt_1773773800257/work
+sqlparse @ file:///opt/miniconda3/conda-bld/sqlparse_1764240029473/work
