@@ -153,5 +153,5 @@ SIMPLE_JWT = {
 
 
 CORS_ALLOWED_ORIGINS = [
-   "https://myproject-theta-flame.vercel.app",
+   "https://myproject-git-main-amelkcs-projects.vercel.app/login",
 ]
