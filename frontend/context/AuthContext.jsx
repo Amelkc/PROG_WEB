@@ -1,7 +1,7 @@
 import { useState, useContext, createContext, useCallback } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { LoadingWrap } from "../components/LoadingWrap";
-export const API_BASE = "http://localhost:8000/api";
+export const API_BASE = process.env.REACT_APP_API_URL;
 const AuthContext = createContext(null);
 
 export function useAuth() { return useContext(AuthContext); }
