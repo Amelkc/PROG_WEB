@@ -153,5 +153,5 @@ SIMPLE_JWT = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # for local dev
+   "https://myproject-theta-flame.vercel.app"
 ]
