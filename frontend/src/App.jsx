@@ -29,7 +29,7 @@ function App() {
         <Route path="/dashboard" element={<RequireAdmin><DashboardPage /></RequireAdmin>}/>
         <Route path="/participants" element={<RequireAdmin><ParticipantsPage/></RequireAdmin>}/>
         <Route path="/profile" element={<RequireAuth><ProfilePage /></RequireAuth>} />
-        <Route path="/profile/:id" element={<RequireAuth><ProfilePage /></RequireAuth>} />
+        <Route path="/profile/:id" element={<RequireAdmin><ProfilePage /></RequireAdmin>} />
         <Route path="/" element={<RequireAuth><HomePage/></RequireAuth>} />
         <Route path="*" element={<Navigate to="/home" replace />} />
         <Route path="/admin/events/create" element={<RequireAdmin><EventCreate /></RequireAdmin>}/>
