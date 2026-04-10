@@ -74,7 +74,7 @@
     text-align: left;
     font-weight: 600;
     font-size: 14px;
-    color: #f5f7fb;
+    color: var(--white);
 }
 
 .field input,

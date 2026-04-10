@@ -7,7 +7,7 @@
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 1.5rm;
   font-weight: 700;
   color: #f0eff4;
   letter-spacing: -0.5px;
@@ -50,7 +50,7 @@ h3 {
 
 .event-field label {
   font-size: 12px;
-  color: var(--dark-grey);
+  color: var(--white);
   font-weight: 500;
   display: block;
   margin-bottom: 5px;
@@ -61,7 +61,7 @@ h3 {
 .event-field select {
   background: #1c1c21;
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 10px;
+  border-radius: 0.7rem;;
   padding: 9px 14px;
   font-size: 14px;
   color: var(--white);
@@ -87,10 +87,10 @@ h3 {
   justify-content: center;
   width: auto;
   white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 12px;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.7rem;
   line-height: 1.2;
-  border-radius: 10px;
+  border-radius: 0.7rem;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
@@ -154,9 +154,10 @@ h3 {
 }
 
 .table-wrap {
+  max-height: 45vh;
+  overflow-y: auto;
   overflow-x: auto;
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
