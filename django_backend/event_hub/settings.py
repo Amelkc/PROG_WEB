@@ -30,7 +30,7 @@ EXT_URL = os.getenv("EXTERNAL_DB_URL")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["prog-web-yari.onrender.com",]
 
 
 # Application definition
