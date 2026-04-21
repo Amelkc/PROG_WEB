@@ -3,9 +3,9 @@ import { useState } from 'react'
 import { Link } from "react-router-dom";
 import { useApi } from '../api/api';
 import { ErrorBox } from '../components/ErrorBox/ErrorBox';
-import { EventList } from '../components/EventList';
+import { EventList } from '../components/EventList/EventList';
 import { useAuth } from "../context/AuthContext";
-import "../style/EventList.css";
+import "../components/EventList/EventList.css";
 
 
 function EventsPage() {
