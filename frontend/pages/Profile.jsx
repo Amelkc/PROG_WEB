@@ -4,7 +4,7 @@ import { LoadingWrap } from "../components/LoadingWrap";
 import { useAuth } from "../context/AuthContext";
 import { useState, useEffect} from "react";
 import { apiMutate, useApi } from "../api/api";
-import { StatusBadge } from "../components/Badge";
+import { StatusBadge } from "../components/Badge/Badge";
 import { Spinner } from "../components/Spinner";
 
 export function ProfilePage() {

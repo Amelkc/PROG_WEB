@@ -1,4 +1,4 @@
-import { StatusBadge } from '../components/Badge';
+import { StatusBadge } from '../components/Badge/Badge';
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { DeleteConfirmModal, EditEventModal } from '../components/EventModal'
 import { useState, useEffect } from 'react'

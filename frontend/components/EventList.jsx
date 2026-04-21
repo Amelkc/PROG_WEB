@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { StatusBadge } from './Badge';
+import { StatusBadge } from './Badge/Badge';
 import "../style/EventList.css";
 
 function EventList({data}) {

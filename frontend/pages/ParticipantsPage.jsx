@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useApi } from "../api/api";
 import { LoadingWrap } from "../components/LoadingWrap";
 import { ErrorBox } from "../components/ErrorBox";
-import { StatusBadge } from "../components/Badge";
+import { StatusBadge } from "../components/Badge/Badge";
 
 export function ParticipantsPage() {
   const [search, setSearch] = useState("");
