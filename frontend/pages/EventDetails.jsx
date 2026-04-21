@@ -1,6 +1,6 @@
 import { StatusBadge } from '../components/Badge/Badge';
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { DeleteConfirmModal, EditEventModal } from '../components/EventModal'
+import { DeleteConfirmModal, EditEventModal } from '../components/EventModal/EventModal'
 import { useState, useEffect } from 'react'
 import { LoadingWrap } from '../components/LoadingWrap'
 import { ErrorBox } from '../components/ErrorBox/ErrorBox'
