@@ -151,13 +151,6 @@ footer {
     padding: 20px;
 }
 
-.footer-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
 footer ul {
     list-style-type: none;
     padding: 0;

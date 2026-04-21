@@ -4,7 +4,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import './App.css'
 
 
-import { Footer } from '../components/Footer';
+import { Footer } from '../components/Footer/Footer';
 import { EventDetails } from '../pages/EventDetails';
 import { RequireAdmin, RequireAuth } from '../context/AuthContext';
 import { DashboardPage } from '../pages/Dashboard';
