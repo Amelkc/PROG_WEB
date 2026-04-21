@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { ErrorBox } from "../components/ErrorBox";
+import { ErrorBox } from "../components/ErrorBox/ErrorBox";
 import { LoadingWrap } from "../components/LoadingWrap";
 import { useAuth } from "../context/AuthContext";
 import { useState, useEffect} from "react";

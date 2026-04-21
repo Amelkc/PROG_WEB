@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { DeleteConfirmModal, EditEventModal } from '../components/EventModal'
 import { useState, useEffect } from 'react'
 import { LoadingWrap } from '../components/LoadingWrap'
-import { ErrorBox } from '../components/ErrorBox'
+import { ErrorBox } from '../components/ErrorBox/ErrorBox'
 import { Spinner } from "../components/Spinner";
 import { useAuth } from "../context/AuthContext";
 import { useApi, apiMutate } from "../api/api";

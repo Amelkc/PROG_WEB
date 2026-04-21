@@ -190,19 +190,6 @@
     background: rgba(239, 68, 68, 0.24);
 }
 
-.modal-error-box {
-    margin-bottom: 16px;
-}
-
-.error-box {
-    background: rgba(239, 68, 68, 0.12);
-    border: 1px solid rgba(239, 68, 68, 0.22);
-    color: #fca5a5;
-    border-radius: 12px;
-    padding: 10px 14px;
-    font-size: 13px;
-}
-
 .confirm-modal-title {
     font-size: 20px;
     font-weight: 700;

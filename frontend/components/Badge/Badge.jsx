@@ -1,3 +1,4 @@
+import "./Badge.css";
 
 export function StatusBadge({ status }) {
   return <span className={`badge badge-${status}`}>{status}</span>;

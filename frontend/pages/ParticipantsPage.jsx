@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useApi } from "../api/api";
 import { LoadingWrap } from "../components/LoadingWrap";
-import { ErrorBox } from "../components/ErrorBox";
+import { ErrorBox } from "../components/ErrorBox/ErrorBox";
 import { StatusBadge } from "../components/Badge/Badge";
 
 export function ParticipantsPage() {
