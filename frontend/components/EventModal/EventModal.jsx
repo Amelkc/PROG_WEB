@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LoadingWrap } from '../LoadingWrap';
+import { LoadingWrap } from '../LoadingWrap/LoadingWrap';
 import { Spinner } from '../Spinner';
 import { useAuth } from '../../context/AuthContext';
 import { apiMutate } from '../../api/api';
