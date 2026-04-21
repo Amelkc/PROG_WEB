@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { ErrorBox } from "../components/ErrorBox/ErrorBox";
-import { LoadingWrap } from "../components/LoadingWrap";
+import { LoadingWrap } from "../components/LoadingWrap/LoadingWrap";
 import { useAuth } from "../context/AuthContext";
 import { useState, useEffect} from "react";
 import { apiMutate, useApi } from "../api/api";

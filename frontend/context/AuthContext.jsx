@@ -1,6 +1,6 @@
 import { useState, useContext, createContext, useCallback } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { LoadingWrap } from "../components/LoadingWrap";
+import { LoadingWrap } from "../components/LoadingWrap/LoadingWrap";
 export const API_BASE = "http://localhost:8000/api";
 const AuthContext = createContext(null);
 

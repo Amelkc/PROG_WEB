@@ -1,5 +1,5 @@
 
-import { LoadingWrap } from "../components/LoadingWrap";
+import { LoadingWrap } from "../components/LoadingWrap/LoadingWrap";
 import { useApi } from "../api/api.jsx"
 import { useAuth } from "../context/AuthContext.jsx";
 import "../style/Dashboard.css"

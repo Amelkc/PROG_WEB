@@ -1,4 +1,4 @@
-import { LoadingWrap } from '../components/LoadingWrap'
+import { LoadingWrap } from '../components/LoadingWrap/LoadingWrap'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
 import { useApi } from '../api/api';
