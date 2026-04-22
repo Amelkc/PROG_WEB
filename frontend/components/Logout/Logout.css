@@ -1,0 +1,14 @@
+.logout-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+}

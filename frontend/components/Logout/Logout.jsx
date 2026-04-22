@@ -1,5 +1,5 @@
-
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
+import "./Logout.css"
 
 export function Logout() {
   const { logout } = useAuth();

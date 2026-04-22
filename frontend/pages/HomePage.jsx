@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext.jsx";
 import { Link } from "react-router-dom";
 import { EventList } from "../components/EventList/EventList";
 import "../style/HomePage.css"
-import { Logout } from "../components/Logout.jsx";
+import { Logout } from "../components/Logout/Logout.jsx";
 
 
 export function HomePage() {
