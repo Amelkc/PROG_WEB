@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { LoginForm } from "../components/LoginForm/LoginForm";
-import { SignupForm } from "../components/SignupForm/SignupForm";
-import "../style/AuthPage.css";
+import { LoginForm } from "../../components/LoginForm/LoginForm";
+import { SignupForm } from "../../components/SignupForm/SignupForm";
+import "./AuthPage.css";
 
 export function AuthPage() {
   const [mode, setMode] = useState("login");

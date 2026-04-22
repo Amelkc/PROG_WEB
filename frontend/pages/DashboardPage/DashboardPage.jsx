@@ -1,8 +1,8 @@
 
-import { LoadingWrap } from "../components/LoadingWrap/LoadingWrap";
-import { useApi } from "../api/api.jsx"
-import { useAuth } from "../context/AuthContext.jsx";
-import "../style/Dashboard.css"
+import { LoadingWrap } from "../../components/LoadingWrap/LoadingWrap.jsx";
+import { useApi } from "../../api/api.jsx"
+import { useAuth } from "../../context/AuthContext.jsx";
+import "./DashboardPage.css"
 
 export function DashboardPage() {
   const { data: events, loading: el } = useApi("/events/");

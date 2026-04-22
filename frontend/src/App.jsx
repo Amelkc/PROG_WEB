@@ -7,10 +7,10 @@ import './App.css'
 import { Footer } from '../components/Footer/Footer';
 import { EventDetails } from '../pages/EventDetails';
 import { RequireAdmin, RequireAuth } from '../context/AuthContext';
-import { DashboardPage } from '../pages/Dashboard';
+import { DashboardPage } from '../pages/DashboardPage/DashboardPage';
 import { HomePage } from '../pages/HomePage';
 import { EventsPage } from '../pages/EventsPage';
-import { AuthPage } from '../pages/AuthPage';
+import { AuthPage } from '../pages/AuthPage/AuthPage';
 import {ParticipantsPage} from '../pages/ParticipantsPage'
 import {ProfilePage} from '../pages/Profile'
 import { EventCreate } from '../pages/EventCreate';
