@@ -1,0 +1,52 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.page-header h1{
+    font-family: var(--heading);
+    font-weight: 500;
+    color: var(--white);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.field input,
+.field textarea,
+.field select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 14px;
+    outline: none;
+    background: #1d1d24;
+    color: #f5f7fb;
+    font-size: 14px;
+    box-shadow: none;
+    appearance: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+    border-color: rgba(255, 79, 159, 0.55);
+    box-shadow: 0 0 0 4px rgba(255, 79, 159, 0.10);
+}

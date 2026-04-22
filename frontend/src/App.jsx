@@ -13,7 +13,7 @@ import { EventsPage } from '../pages/EventsPage';
 import { AuthPage } from '../pages/AuthPage/AuthPage';
 import {ParticipantsPage} from '../pages/ParticipantsPage'
 import {ProfilePage} from '../pages/Profile'
-import { EventCreate } from '../pages/EventCreate';
+import { EventCreate } from '../pages/EventCreatePage/EventCreatePage';
 function App() {
   
 

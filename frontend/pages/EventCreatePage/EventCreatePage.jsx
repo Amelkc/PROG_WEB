@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth, API_BASE } from '../context/AuthContext';
-import '../style/EventForm.css';
+import { useAuth, API_BASE } from '../../context/AuthContext';
+import './EventCreatePage.css';
 
 function EventCreate() {
   const { tokens } = useAuth();
