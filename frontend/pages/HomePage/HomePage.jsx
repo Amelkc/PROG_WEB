@@ -1,12 +1,11 @@
 
-import { LoadingWrap } from "../components/LoadingWrap/LoadingWrap";
-import { useApi } from "../api/api.jsx"
-import { useAuth } from "../context/AuthContext.jsx";
+import { LoadingWrap } from "../../components/LoadingWrap/LoadingWrap.jsx";
+import { useApi } from "../../api/api.jsx"
+import { useAuth } from "../../context/AuthContext.jsx";
 import { Link } from "react-router-dom";
-import { EventList } from "../components/EventList/EventList";
-import "../style/HomePage.css"
-import { Logout } from "../components/Logout/Logout.jsx";
-
+import { EventList } from "../../components/EventList/EventList.jsx";
+import { Logout } from "../../components/Logout/Logout.jsx";
+import "./HomePage.css"
 
 export function HomePage() {
   const { user, tokens, refreshToken } = useAuth();
