@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useAuth } from "../context/AuthContext";
-import { Spinner } from "./Spinner";
+import { useAuth } from "../../context/AuthContext";
+import { Spinner } from "../Spinner";
+import "./SignupForm.css";
 
 export function SignupForm({ onSuccess }) {
   const [form, setForm]       = useState({ email: "", first_name: "", last_name: "", password: "", confirm: "" });
