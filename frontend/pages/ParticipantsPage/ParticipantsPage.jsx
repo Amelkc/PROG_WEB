@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useApi } from "../api/api";
-import { LoadingWrap } from "../components/LoadingWrap/LoadingWrap";
-import { ErrorBox } from "../components/ErrorBox/ErrorBox";
-import { StatusBadge } from "../components/Badge/Badge";
+import { useApi } from "../../api/api";
+import { LoadingWrap } from "../../components/LoadingWrap/LoadingWrap";
+import { ErrorBox } from "../../components/ErrorBox/ErrorBox";
+import { StatusBadge } from "../../components/Badge/Badge";
+import "./ParticipantsPage.css";
 
 export function ParticipantsPage() {
   const [search, setSearch] = useState("");

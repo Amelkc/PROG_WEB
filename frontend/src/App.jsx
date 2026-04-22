@@ -11,7 +11,7 @@ import { DashboardPage } from '../pages/DashboardPage/DashboardPage';
 import { HomePage } from '../pages/HomePage/HomePage';
 import { EventsPage } from '../pages/EventsPage/EventsPage';
 import { AuthPage } from '../pages/AuthPage/AuthPage';
-import {ParticipantsPage} from '../pages/ParticipantsPage'
+import {ParticipantsPage} from '../pages/ParticipantsPage/ParticipantsPage'
 import {ProfilePage} from '../pages/Profile'
 import { EventCreate } from '../pages/EventCreatePage/EventCreatePage';
 function App() {
