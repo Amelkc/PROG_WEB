@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { ErrorBox } from "../components/ErrorBox/ErrorBox";
-import { LoadingWrap } from "../components/LoadingWrap/LoadingWrap";
-import { useAuth } from "../context/AuthContext";
+import { ErrorBox } from "../../components/ErrorBox/ErrorBox";
+import { LoadingWrap } from "../../components/LoadingWrap/LoadingWrap";
+import { useAuth } from "../../context/AuthContext";
 import { useState, useEffect} from "react";
-import { apiMutate, useApi } from "../api/api";
-import { StatusBadge } from "../components/Badge/Badge";
-import { Spinner } from "../components/Spinner/Spinner";
+import { apiMutate, useApi } from "../../api/api";
+import { StatusBadge } from "../../components/Badge/Badge";
+import { Spinner } from "../../components/Spinner/Spinner";
 
 export function ProfilePage() {
   const { id: routeId } = useParams();
