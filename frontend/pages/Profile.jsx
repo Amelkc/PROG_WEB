@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import { useState, useEffect} from "react";
 import { apiMutate, useApi } from "../api/api";
 import { StatusBadge } from "../components/Badge/Badge";
-import { Spinner } from "../components/Spinner";
+import { Spinner } from "../components/Spinner/Spinner";
 
 export function ProfilePage() {
   const { id: routeId } = useParams();

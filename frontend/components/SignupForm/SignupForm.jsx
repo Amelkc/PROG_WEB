@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { Spinner } from "../Spinner";
+import { Spinner } from "../Spinner/Spinner";
 import "./SignupForm.css";
 
 export function SignupForm({ onSuccess }) {

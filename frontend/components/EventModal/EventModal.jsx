@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { LoadingWrap } from '../LoadingWrap/LoadingWrap';
-import { Spinner } from '../Spinner';
+import { Spinner } from '../Spinner/Spinner';
 import { useAuth } from '../../context/AuthContext';
 import { apiMutate } from '../../api/api';
 import './EventModal.css';

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { Spinner } from "../Spinner";
+import { Spinner } from "../Spinner/Spinner";
 import "./LoginForm.css";
 
 export function LoginForm({ onSwitchToSignup }) {

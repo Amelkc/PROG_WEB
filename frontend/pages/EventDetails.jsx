@@ -4,7 +4,7 @@ import { DeleteConfirmModal, EditEventModal } from '../components/EventModal/Eve
 import { useState, useEffect } from 'react'
 import { LoadingWrap } from '../components/LoadingWrap/LoadingWrap'
 import { ErrorBox } from '../components/ErrorBox/ErrorBox'
-import { Spinner } from "../components/Spinner";
+import { Spinner } from "../components/Spinner/Spinner";
 import { useAuth } from "../context/AuthContext";
 import { useApi, apiMutate } from "../api/api";
 import "../style/EventDetails.css";
