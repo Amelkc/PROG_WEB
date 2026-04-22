@@ -128,25 +128,28 @@ export function ProfilePage() {
       <aside className="profile-aside">
         <div className="card profile-identity">
           <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 16 16">
-          <path d="m 8 1 c -1.65625 0 -3 1.34375 -3 3 s 1.34375 3 3 3 s 3 -1.34375 3 -3 s -1.34375 -3 -3 -3 z m -1.5 7 c -2.492188 0 -4.5 2.007812 -4.5 4.5 v 0.5 c 0 1.109375 0.890625 2 2 2 h 8 c 1.109375 0 2 -0.890625 2 -2 v -0.5 c 0 -2.492188 -2.007812 -4.5 -4.5 -4.5 z m 0 0" fill="#fff"/>
+            <path d="m 8 1 c -1.65625 0 -3 1.34375 -3 3 s 1.34375 3 3 3 s 3 -1.34375 3 -3 s -1.34375 -3 -3 -3 z m -1.5 7 c -2.492188 0 -4.5 2.007812 -4.5 4.5 v 0.5 c 0 1.109375 0.890625 2 2 2 h 8 c 1.109375 0 2 -0.890625 2 -2 v -0.5 c 0 -2.492188 -2.007812 -4.5 -4.5 -4.5 z m 0 0" fill="#fff"/>
           </svg>
+
           <p className="profile-name-lg">{profileData.first_name} {profileData.last_name}</p>
           <p className="profile-meta">{profileData.email}</p>
-          <StatusBadge status={profileData.is_staff ? "Admin" : "Viewer"}></StatusBadge>
-     
+          <StatusBadge status={profileData.is_staff ? "Admin" : "Viewer"} />
+
+          {canEdit && (
+            <div className="profile-identity-footer">
+              <button
+                className="btn btn-danger-outline"
+                onClick={() => setShowDeleteConfirm(true)}
+              >
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M2 3h9M5 3V2h3v1M4 3l.5 8h4L9 3"/>
+                </svg>
+                {isOwnProfile ? "Delete my account" : "Delete account"}
+              </button>
+            </div>
+          )}
         </div>
-
-        {canEdit && (
-            <button className="btn btn-danger-outline btn-full" onClick={() => setShowDeleteConfirm(true)}>
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M2 3h9M5 3V2h3v1M4 3l.5 8h4L9 3"/>
-              </svg>
-              {isOwnProfile ? "Delete my account" : "Delete account"}
-            </button>
-         
-        )}
       </aside>
-
    
       <div className="profile-forms">
 
