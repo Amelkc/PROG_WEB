@@ -1,13 +1,13 @@
-import { StatusBadge } from '../components/Badge/Badge';
+import { StatusBadge } from '../../components/Badge/Badge';
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { DeleteConfirmModal, EditEventModal } from '../components/EventModal/EventModal'
+import { DeleteConfirmModal, EditEventModal } from '../../components/EventModal/EventModal'
 import { useState, useEffect } from 'react'
-import { LoadingWrap } from '../components/LoadingWrap/LoadingWrap'
-import { ErrorBox } from '../components/ErrorBox/ErrorBox'
-import { Spinner } from "../components/Spinner/Spinner";
-import { useAuth } from "../context/AuthContext";
-import { useApi, apiMutate } from "../api/api";
-import "../style/EventDetails.css";
+import { LoadingWrap } from '../../components/LoadingWrap/LoadingWrap'
+import { ErrorBox } from '../../components/ErrorBox/ErrorBox'
+import { Spinner } from "../../components/Spinner/Spinner";
+import { useAuth } from "../../context/AuthContext";
+import { useApi, apiMutate } from "../../api/api";
+import "./EventDetails.css";
 
 function EventDetails() {
   const { id } = useParams();

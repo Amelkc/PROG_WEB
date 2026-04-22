@@ -5,11 +5,11 @@ import './App.css'
 
 
 import { Footer } from '../components/Footer/Footer';
-import { EventDetails } from '../pages/EventDetails';
+import { EventDetails } from '../pages/EventDetailsPage/EventDetailsPage';
 import { RequireAdmin, RequireAuth } from '../context/AuthContext';
 import { DashboardPage } from '../pages/DashboardPage/DashboardPage';
 import { HomePage } from '../pages/HomePage';
-import { EventsPage } from '../pages/EventsPage';
+import { EventsPage } from '../pages/EventsPage/EventsPage';
 import { AuthPage } from '../pages/AuthPage/AuthPage';
 import {ParticipantsPage} from '../pages/ParticipantsPage'
 import {ProfilePage} from '../pages/Profile'

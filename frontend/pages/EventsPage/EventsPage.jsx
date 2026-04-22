@@ -1,11 +1,11 @@
-import { LoadingWrap } from '../components/LoadingWrap/LoadingWrap'
+import { LoadingWrap } from '../../components/LoadingWrap/LoadingWrap'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
-import { useApi } from '../api/api';
-import { ErrorBox } from '../components/ErrorBox/ErrorBox';
-import { EventList } from '../components/EventList/EventList';
-import { useAuth } from "../context/AuthContext";
-import "../components/EventList/EventList.css";
+import { useApi } from '../../api/api';
+import { ErrorBox } from '../../components/ErrorBox/ErrorBox';
+import { EventList } from '../../components/EventList/EventList';
+import { useAuth } from "../../context/AuthContext";
+import "./EventsPage.css";
 
 
 function EventsPage() {
